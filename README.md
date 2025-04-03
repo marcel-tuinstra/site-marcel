@@ -36,6 +36,7 @@ This site serves as my personal portfolio — showcasing who I am, what I build,
 ```bash
 npm install
 npm run dev
+```
 
 ---
 
