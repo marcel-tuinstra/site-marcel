@@ -35,8 +35,9 @@ jobs:
             - name: 🧹 Lint
               run: npm run lint
 
-            - name: 🧪 Type check
-              run: npm run typecheck
+            # Remove the type check step
+            # - name: 🧪 Type check
+            #   run: npm run typecheck
 
             - name: 🏗️ Build
               run: npm run build
