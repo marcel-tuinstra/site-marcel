@@ -36,3 +36,10 @@ This site serves as my personal portfolio — showcasing who I am, what I build,
 ```bash
 npm install
 npm run dev
+
+---
+
+## 🔒 License
+
+This project is not licensed for reuse.  
+Feel free to explore the code, but please do not copy or repurpose without permission.
