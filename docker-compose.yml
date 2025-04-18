@@ -1,7 +1,11 @@
-version: '3'
+version: '3.8'
 services:
     site-marcel:
-        build: .
+        build:
+            context: .
+            dockerfile: Dockerfile
         ports:
             - "3000:3000"
+        volumes:
+            - ./app:/app
         restart: unless-stopped

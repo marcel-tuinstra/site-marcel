@@ -3,12 +3,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    '@nuxtjs/seo',
     '@nuxt/eslint',
-    '@nuxt/fonts',
     '@nuxt/scripts',
+    '@nuxt/fonts',
+    '@nuxt/content',
     '@nuxt/ui',
     '@nuxt/icon',
-    '@nuxtjs/seo'
   ],
   site: {
     url: 'https://marcel.tuinstra.dev',

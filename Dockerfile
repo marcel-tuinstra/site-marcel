@@ -1,19 +1,18 @@
-# Dockerfile
+# Base Nuxt image
 FROM node:22-alpine
 
+# Install system dependencies
+RUN apk add --no-cache git
+
+# Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY package*.json ./
+# Copy and install dependencies
+COPY . .
 RUN npm install
 
-# Copy the rest of the app
-COPY . .
-
-# Build for production
-RUN npm run build
-
+# Expose the default Nuxt port
 EXPOSE 3000
 
-# Run the app
+# Start Nuxt in production
 CMD ["npm", "run", "start"]
