@@ -11,8 +11,11 @@ WORKDIR /app
 COPY . .
 RUN npm install
 
-# Expose the default Nuxt port
+# Build Nuxt for production (creates .output/)
+RUN npm run build
+
+# Expose Nuxt default port
 EXPOSE 3000
 
-# Start Nuxt in production
-CMD ["npm", "run", "start"]
+# Start Nuxt server (SSR mode)
+CMD ["node", ".output/server/index.mjs"]
