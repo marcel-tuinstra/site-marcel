@@ -5,7 +5,7 @@ description: Marcel Tuinstra – Fullstack Developer Portfolio
 
 # Welcome 👋
 
-Hi, I'm Marcel — a fullstack developer focused on building clean, maintainable apps with modern frameworks like Nuxt, Vue, Symfony, and Tailwind. I enjoy crafting user-friendly interfaces backed by solid architecture.
+Hi, I'm Marcel Tuinstra — a fullstack developer focused on building clean, maintainable apps with modern frameworks like Nuxt, Vue, Symfony, and Tailwind. I enjoy crafting user-friendly interfaces backed by solid architecture.
 
 ---
 
