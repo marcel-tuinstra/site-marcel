@@ -30,7 +30,7 @@ jobs:
                       
                       # Pull latest changes
                       cd /mnt/ssd1000-01/projects/site-marcel
-                      git pull git@github.com:marcel-tuinstra/site-marcel.git main
+                      git pull https://github.com/marcel-tuinstra/site-marcel.git main
                       
                       # Rebuild and restart container
                       cd /mnt/nvme/docker-compose/site-marcel
