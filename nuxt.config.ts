@@ -5,8 +5,8 @@ export default defineNuxtConfig({
     modules: ['@nuxt/content', '@nuxt/ui'],
     css: ['~/assets/css/main.css'],
     content: {
-        studio: {
-            enabled: false // explicitly disable
+        preview: {
+            api: 'https://api.nuxt.studio'
         }
     }
 })
