@@ -1,22 +1,26 @@
-# Stage 1: Build
-FROM node:22-alpine AS builder
-
-WORKDIR /app
-COPY . .
-
-RUN apk add --no-cache git && \
-    npm install && \
-    npm run build
-
-# Stage 2: Runtime
+# Base Nuxt image
 FROM node:22-alpine
 
+# Install system dependencies
+RUN apk add --no-cache git
+
+# Set working directory
 WORKDIR /app
 
-COPY --from=builder /app/.output .output
-COPY --from=builder /app/package.json .
-COPY --from=builder /app/node_modules ./node_modules
+# Copy package files first for better caching
+COPY package*.json ./
 
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the code
+COPY . .
+
+# Build the Nuxt app
+RUN npm run build
+
+# Expose the port
 EXPOSE 3000
 
+# Run the app in production
 CMD ["node", ".output/server/index.mjs"]

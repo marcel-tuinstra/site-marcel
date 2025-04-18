@@ -7,6 +7,7 @@ on:
 
 jobs:
     deploy:
+        needs: ci  # 👈 Waits for CI job to succeed
         runs-on: ubuntu-latest
 
         steps:
@@ -24,4 +25,5 @@ jobs:
                       git pull origin main
                       cd /mnt/nvme/docker-compose/site-marcel
                       docker compose down
+                      docker compose build
                       docker compose up -d
