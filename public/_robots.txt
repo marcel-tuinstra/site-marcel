@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /admin/
-Disallow: /login/
-
-Allow: /public/
-Sitemap: https://marcel.tuinstra.dev/sitemap.xml
