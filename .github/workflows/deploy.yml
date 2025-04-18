@@ -1,0 +1,27 @@
+name: Deploy to Server
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Deploy over SSH
+              uses: appleboy/ssh-action@v1.0.0
+              with:
+                  host: ${{ secrets.SERVER_IP }}
+                  username: mtuinstra
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  script: |
+                      cd /mnt/ssd1000-01/projects/site-marcel
+                      git pull origin main
+                      cd /mnt/nvme/docker-compose/site-marcel
+                      docker compose down
+                      docker compose up -d
