@@ -1,3 +1,7 @@
-# My First Page
+---
+title: "Hey, I’m Marcel"
+description: "Fullstack developer building clean UIs and modern sites"
+---
 
-Hi there! My name is Marcel Tuinstra!
+Welcome to my portfolio.  
+This content is pulled from markdown using Nuxt Content!

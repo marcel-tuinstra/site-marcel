@@ -1,21 +1,34 @@
-export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+import tailwindcss from "@tailwindcss/vite";
 
-  modules: [
-    '@nuxtjs/seo',
-    '@nuxt/eslint',
-    '@nuxt/scripts',
-    '@nuxt/fonts',
-    '@nuxt/content',
-    '@nuxt/ui',
-    '@nuxt/icon',
-  ],
-  site: {
-    url: 'https://marcel.tuinstra.dev',
-    name: 'Marcel Tuinstra',
-    canonicalUrl: true,
-    robots: true,
-    sitemap: true,
-  },
+export default defineNuxtConfig({
+    typescript: {
+        shim: false
+    },
+
+    modules: [
+        '@nuxthq/studio',
+        '@nuxtjs/seo',
+        '@nuxt/content',
+        '@nuxt/ui',
+    ],
+
+    vite: {
+        plugins: [
+            tailwindcss(),
+        ],
+    },
+    css: ['~/assets/css/main.css'],
+    ui: {
+        icons: 'lucide'
+    },
+
+    seo: {
+        siteName: 'Marcel Tuinstra – Fullstack Developer',
+        description: 'Clean UIs. Solid architecture. A modern Nuxt portfolio.',
+        ogImage: '/og-image.jpg',
+        twitterCard: 'summary_large_image',
+        themeColor: '#0f172a'
+    },
+
+    compatibilityDate: '2025-04-18',
 })
