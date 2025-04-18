@@ -22,8 +22,14 @@ jobs:
                   username: mtuinstra
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   script: |
+                      mkdir -p ~/.ssh
+                      echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+                      chmod 600 ~/.ssh/id_rsa
+                      ssh-keyscan github.com >> ~/.ssh/known_hosts
+                      
                       cd /mnt/ssd1000-01/projects/site-marcel
-                      git pull origin main
+                      git pull https://github.com/marcel-tuinstra/site-marcel.git main
+                      
                       cd /mnt/nvme/docker-compose/site-marcel
                       docker compose down
                       docker compose build --no-cache
