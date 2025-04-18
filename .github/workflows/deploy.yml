@@ -7,7 +7,6 @@ on:
 
 jobs:
     deploy:
-        needs: ci  # 👈 Waits for CI job to succeed
         runs-on: ubuntu-latest
 
         steps:
