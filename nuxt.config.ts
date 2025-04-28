@@ -1,12 +1,44 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    compatibilityDate: '2024-11-01',
-    devtools: {enabled: true},
-    modules: ['@nuxt/content', '@nuxt/ui'],
-    css: ['~/assets/css/main.css'],
-    content: {
-        preview: {
-            api: 'https://api.nuxt.studio'
-        }
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/ui-pro',
+    '@nuxt/content'
+  ],
+
+  devtools: {
+    enabled: true
+  },
+
+  css: ['~/assets/css/main.css'],
+
+  mdc: {
+    highlight: {
+      noApiRoute: false
     }
+  },
+
+  future: {
+    compatibilityVersion: 4
+  },
+
+  compatibilityDate: '2025-01-15',
+
+  nitro: {
+    prerender: {
+      routes: [
+        '/'
+      ]
+    }
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  }
 })

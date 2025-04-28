@@ -26,5 +26,8 @@ jobs:
             - name: 🔍 Check Nuxt setup
               run: npx nuxi info  # basic sanity check
 
-            - name: 🏗️ Build
-              run: npm run build
+            - name: Lint
+              run: npm run lint
+
+            - name: Typecheck
+              run: npm run typecheck
