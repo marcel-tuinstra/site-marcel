@@ -1,75 +1,46 @@
-# Nuxt Minimal Starter
+# 🌐 site-marcel
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> Personal portfolio site built with Nuxt 3 and Tailwind CSS.  
+> Deployed at: [https://marcel.tuinstra.dev](https://marcel.tuinstra.dev)
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 🧠 Overview
+
+This site serves as my personal portfolio — showcasing who I am, what I build, and where I’m going. Built with performance, SEO, and visual clarity in mind.
+
+---
+
+## 🚀 Stack
+
+- [Nuxt 3](https://nuxt.com)
+- Tailwind CSS
+- VueUse
+- SSR (via Vercel or Netlify)
+- Markdown or Headless CMS (optional)
+
+---
+
+## 📁 Sections
+
+- Hero / Intro
+- About Me
+- Projects
+- Skills
+- Contact
+
+---
+
+## 📦 Setup
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+---
 
-Build the application for production:
+## 🔒 License
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is not licensed for reuse.  
+Feel free to explore the code, but please do not copy or repurpose without permission.
