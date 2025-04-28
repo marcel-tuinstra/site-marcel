@@ -42,7 +42,9 @@ export default defineNuxtConfig({
     }
   },
 
-  preview: {
-    api: 'https://api.nuxt.studio'
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
   }
 })
