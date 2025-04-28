@@ -7,10 +7,6 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
 
-  preview: {
-    api: 'https://api.nuxt.studio'
-  },
-
   devtools: {
     enabled: true
   },
@@ -44,5 +40,9 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  preview: {
+    api: 'https://api.nuxt.studio'
   }
 })
