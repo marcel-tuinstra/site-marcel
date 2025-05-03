@@ -4,7 +4,10 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/ui-pro',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@vueuse/nuxt',
+    'nuxt-og-image',
+    'motion-v/nuxt'
   ],
 
   devtools: {
@@ -13,23 +16,18 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  mdc: {
-    highlight: {
-      noApiRoute: false
-    }
-  },
-
   future: {
     compatibilityVersion: 4
   },
 
-  compatibilityDate: '2025-01-15',
+  compatibilityDate: '2024-11-01',
 
   nitro: {
     prerender: {
       routes: [
         '/'
-      ]
+      ],
+      crawlLinks: true
     }
   },
 

@@ -1,92 +1,115 @@
-import { defineCollection, z } from '@nuxt/content'
-
-const createEnum = (options: [string, ...string[]]) => z.enum(options)
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const createBaseSchema = () => z.object({
-  title: z.string().nonempty(),
-  description: z.string().nonempty()
+  title: z.string(),
+  description: z.string()
 })
 
-const createLinkSchema = () => z.object({
-  label: z.string().nonempty(),
-  to: z.string().nonempty(),
-  icon: z.string().optional().editor({ input: 'icon' }),
-  size: createEnum(['xs', 'sm', 'md', 'lg', 'xl']),
-  trailing: z.boolean().optional(),
-  target: createEnum(['_blank', '_self']),
-  color: createEnum(['primary', 'secondary', 'neutral', 'error', 'warning', 'success', 'info']),
-  variant: createEnum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link'])
+const createButtonSchema = () => z.object({
+  label: z.string(),
+  icon: z.string().optional(),
+  to: z.string().optional(),
+  color: z.enum(['primary', 'neutral', 'success', 'warning', 'error', 'info']).optional(),
+  size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+  variant: z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional(),
+  target: z.enum(['_blank', '_self']).optional()
 })
 
-const createFeatureSchema = () => createBaseSchema().extend({
-  icon: z.string().editor({ input: 'icon' }),
-  ui: z.object({
-    leading: z.string().optional()
-  }).editor({ hidden: true })
+const createImageSchema = () => z.object({
+  src: z.string().editor({ input: 'media' }),
+  alt: z.string()
 })
 
-export const collections = {
-  content: defineCollection({
-    source: 'index.yml',
-    type: 'page',
-    schema: z.object({
-      hero: z.object({
-        links: z.array(createLinkSchema())
-      }),
-      section: createBaseSchema().extend({
-        headline: z.string().optional(),
-        images: z.object({
-          mobile: z.string().optional(),
-          desktop: z.string().optional()
+const createAuthorSchema = () => z.object({
+  name: z.string(),
+  description: z.string().optional(),
+  username: z.string().optional(),
+  twitter: z.string().optional(),
+  to: z.string().optional(),
+  avatar: createImageSchema().optional()
+})
+
+const createTestimonialSchema = () => z.object({
+  quote: z.string(),
+  author: createAuthorSchema()
+})
+
+export default defineContentConfig({
+  collections: {
+    index: defineCollection({
+      type: 'page',
+      source: 'index.yml',
+      schema: z.object({
+        hero: z.object({
+          links: z.array(createButtonSchema()),
+          images: z.array(createImageSchema())
         }),
-        features: z.array(
-          createBaseSchema().extend({
-            icon: z.string().editor({ input: 'icon' })
-          })
-        )
-      }),
-      features: createBaseSchema().extend({
-        features: z.array(createFeatureSchema())
-      }),
-      steps: createBaseSchema().extend({
-        items: z.array(createFeatureSchema().extend({
-          image: z.object({
-            light: z.string().editor({ input: 'media' }),
-            dark: z.string().editor({ input: 'media' })
-          }).optional()
-        }))
-      }),
-      pricing: createBaseSchema().extend({
-        plans: z.array(
-          createBaseSchema().extend({
-            price: z.string().nonempty(),
-            button: createLinkSchema(),
-            features: z.array(z.string().nonempty()),
-            highlight: z.boolean().optional(),
-            billing_period: z.string().nonempty(),
-            billing_cycle: z.string().nonempty()
-          })
-        )
-      }),
-      testimonials: createBaseSchema().extend({
-        items: z.array(
-          z.object({
-            quote: z.string().nonempty(),
-            user: z.object({
-              name: z.string().nonempty(),
-              description: z.string().nonempty(),
-              to: z.string().nonempty(),
-              avatar: z.object({
-                src: z.string().editor({ input: 'media' }),
-                alt: z.string().optional()
-              }),
-              target: createEnum(['_blank', '_self'])
+        about: createBaseSchema(),
+        experience: createBaseSchema().extend({
+          items: z.array(z.object({
+            date: z.date(),
+            position: z.string(),
+            company: z.object({
+              name: z.string(),
+              url: z.string(),
+              logo: z.string().editor({ input: 'icon' }),
+              color: z.string()
             })
           }))
-      }),
-      cta: createBaseSchema().extend({
-        links: z.array(createLinkSchema())
+        }),
+        testimonials: z.array(createTestimonialSchema()),
+        faq: createBaseSchema().extend({
+          categories: z.array(
+            z.object({
+              title: z.string().nonempty(),
+              questions: z.array(
+                z.object({
+                  label: z.string().nonempty(),
+                  content: z.string().nonempty()
+                })
+              )
+            }))
+        })
+      })
+    }),
+    projects: defineCollection({
+      type: 'data',
+      source: 'projects/*.yml',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        image: z.string().nonempty().editor({ input: 'media' }),
+        url: z.string().nonempty(),
+        tags: z.array(z.string()),
+        date: z.date()
+      })
+    }),
+    blog: defineCollection({
+      type: 'page',
+      source: 'blog/*.md',
+      schema: z.object({
+        minRead: z.number(),
+        date: z.date(),
+        image: z.string().nonempty().editor({ input: 'media' }),
+        author: createAuthorSchema()
+      })
+    }),
+    pages: defineCollection({
+      type: 'page',
+      source: [
+        { include: 'projects.yml' }
+      ],
+      schema: z.object({
+        links: z.array(createButtonSchema())
+      })
+    }),
+    about: defineCollection({
+      type: 'page',
+      source: 'about.yml',
+      schema: z.object({
+        content: z.object({}),
+        images: z.array(createImageSchema())
       })
     })
-  })
-}
+  }
+})
