@@ -12,7 +12,7 @@ export default defineAppConfig({
   },
   ui: {
     colors: {
-      primary: 'blue',
+      primary: 'yellow',
       neutral: 'neutral'
     }
   },
@@ -26,7 +26,7 @@ export default defineAppConfig({
     }
   },
   footer: {
-    credits: `Copyright © ${new Date().getFullYear()}`,
+    credits: `© Marcel Tuinstra ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-linkedin',
