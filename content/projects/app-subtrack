@@ -1,0 +1,6 @@
+title: Subtrack
+description: SaaS platform for managing WBSO innovation projects, built with Symfony 7 and Nuxt 4. Designed to give companies and consultants clear insight into project progress, time logging, and validations through a modern, intuitive interface.
+image: /images/app-subtrack.png
+url: https://subtrack.nl
+tags: ["Nuxt 4", "Tailwind CSS", "Nuxt UI Pro", "Symfony", "Api Platform"]
+date: "2025"
