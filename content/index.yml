@@ -32,6 +32,13 @@ experience:
   title: Work Experience
   items:
     - position: "Sr. Software Engineer at"
+      date: "2025 - NOW()"
+      company:
+        name: Skrepr
+        logo: ""
+        url: "https://skrepr.com"
+        color: "#ffa524"
+    - position: "Sr. Software Engineer at"
       date: "2016 - 2025"
       company:
         name: Validaide
