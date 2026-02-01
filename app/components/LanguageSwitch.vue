@@ -14,99 +14,24 @@ const localeOptions = computed(() => ([
     to: switchLocalePath('nl')
   }
 ]))
+const menuItems = computed(() => [localeOptions.value])
 const currentLocale = computed(() => localeOptions.value.find(option => option.code === locale.value) ?? localeOptions.value[0])
 const menuLabel = computed(() => t('language.menu'))
 </script>
 
 <template>
-  <UDropdown
-    :items="localeOptions"
-  >
+  <UDropdownMenu :items="menuItems">
     <UButton
       variant="ghost"
       size="sm"
-      class="p-1"
+      class="rounded-full p-1"
       :aria-label="menuLabel"
     >
       <span class="sr-only">{{ menuLabel }}</span>
-      <svg
-        v-if="currentLocale?.code === 'nl'"
-        class="h-5 w-6 rounded-sm"
-        viewBox="0 0 24 16"
-        aria-hidden="true"
-      >
-        <rect
-          width="24"
-          height="16"
-          fill="#21468B"
-        />
-        <rect
-          width="24"
-          height="10.67"
-          fill="#FFFFFF"
-        />
-        <rect
-          width="24"
-          height="5.33"
-          fill="#AE1C28"
-        />
-      </svg>
-      <svg
-        v-else
-        class="h-5 w-6 rounded-sm"
-        viewBox="0 0 24 16"
-        aria-hidden="true"
-      >
-        <rect
-          width="24"
-          height="16"
-          fill="#012169"
-        />
-        <path
-          d="M0 0 L24 16 M24 0 L0 16"
-          stroke="#FFFFFF"
-          stroke-width="3"
-        />
-        <path
-          d="M0 0 L24 16 M24 0 L0 16"
-          stroke="#C8102E"
-          stroke-width="1.5"
-        />
-        <rect
-          x="10"
-          width="4"
-          height="16"
-          fill="#FFFFFF"
-        />
-        <rect
-          y="6"
-          width="24"
-          height="4"
-          fill="#FFFFFF"
-        />
-        <rect
-          x="11"
-          width="2"
-          height="16"
-          fill="#C8102E"
-        />
-        <rect
-          y="7"
-          width="24"
-          height="2"
-          fill="#C8102E"
-        />
-      </svg>
-    </UButton>
-    <template #item="{ item }">
-      <NuxtLink
-        :to="item.to"
-        class="flex items-center gap-2 px-2 py-1.5"
-      >
-        <span class="sr-only">{{ item.label }}</span>
+      <span class="flex size-4 items-center justify-center overflow-hidden rounded-full ring-1 ring-neutral-200/60 dark:ring-neutral-700/60">
         <svg
-          v-if="item.code === 'nl'"
-          class="h-5 w-6 rounded-sm"
+          v-if="currentLocale?.code === 'nl'"
+          class="h-4 w-6"
           viewBox="0 0 24 16"
           aria-hidden="true"
         >
@@ -128,51 +53,140 @@ const menuLabel = computed(() => t('language.menu'))
         </svg>
         <svg
           v-else
-          class="h-5 w-6 rounded-sm"
+          class="h-4 w-6"
           viewBox="0 0 24 16"
           aria-hidden="true"
         >
           <rect
             width="24"
             height="16"
-            fill="#012169"
-          />
-          <path
-            d="M0 0 L24 16 M24 0 L0 16"
-            stroke="#FFFFFF"
-            stroke-width="3"
-          />
-          <path
-            d="M0 0 L24 16 M24 0 L0 16"
-            stroke="#C8102E"
-            stroke-width="1.5"
+            fill="#B22234"
           />
           <rect
-            x="10"
-            width="4"
-            height="16"
+            y="1.23"
+            width="24"
+            height="1.23"
             fill="#FFFFFF"
           />
           <rect
-            y="6"
+            y="3.69"
             width="24"
-            height="4"
+            height="1.23"
             fill="#FFFFFF"
           />
           <rect
-            x="11"
-            width="2"
-            height="16"
-            fill="#C8102E"
+            y="6.15"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
           />
           <rect
-            y="7"
+            y="8.62"
             width="24"
-            height="2"
-            fill="#C8102E"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="11.08"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="13.54"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            width="9.6"
+            height="7.38"
+            fill="#3C3B6E"
           />
         </svg>
-      </NuxtLink>
+      </span>
+    </UButton>
+    <template #item-leading="{ item }">
+      <span class="flex size-4 items-center justify-center overflow-hidden rounded-full ring-1 ring-neutral-200/60 dark:ring-neutral-700/60">
+        <svg
+          v-if="item.code === 'nl'"
+          class="h-4 w-6"
+          viewBox="0 0 24 16"
+          aria-hidden="true"
+        >
+          <rect
+            width="24"
+            height="16"
+            fill="#21468B"
+          />
+          <rect
+            width="24"
+            height="10.67"
+            fill="#FFFFFF"
+          />
+          <rect
+            width="24"
+            height="5.33"
+            fill="#AE1C28"
+          />
+        </svg>
+        <svg
+          v-else
+          class="h-4 w-6"
+          viewBox="0 0 24 16"
+          aria-hidden="true"
+        >
+          <rect
+            width="24"
+            height="16"
+            fill="#B22234"
+          />
+          <rect
+            y="1.23"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="3.69"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="6.15"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="8.62"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="11.08"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            y="13.54"
+            width="24"
+            height="1.23"
+            fill="#FFFFFF"
+          />
+          <rect
+            width="9.6"
+            height="7.38"
+            fill="#3C3B6E"
+          />
+        </svg>
+      </span>
     </template>
-  </UDropdown>
+    <template #item-label="{ item }">
+      <span class="sr-only">{{ item.label }}</span>
+    </template>
+  </UDropdownMenu>
 </template>
