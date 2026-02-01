@@ -12,7 +12,7 @@ const items = computed(() => {
       key: faq.title.toLowerCase(),
       questions: faq.questions
     }
-  })
+  }) || []
 })
 
 const ui = {
@@ -26,6 +26,7 @@ const ui = {
 
 <template>
   <UPageSection
+    v-if="page.faq"
     :title="page.faq.title"
     :description="page.faq.description"
     :ui="{

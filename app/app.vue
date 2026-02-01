@@ -57,8 +57,9 @@ useSeoMeta({
 useHead({
   script: [
     {
+      key: 'ld-json',
       type: 'application/ld+json',
-      children: jsonLd
+      innerHTML: jsonLd
     }
   ]
 })
