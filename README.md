@@ -1,13 +1,13 @@
 # 🌐 site-marcel
 
-Personal portfolio site for Marcel Tuinstra, built with Nuxt 4 and Nuxt UI Pro.
+Personal portfolio site for Marcel Tuinstra, built with Nuxt 4 (verified on 4.3.0) and Nuxt UI.
 
 Deployed at: https://marcel.tuinstra.dev
 
 ## 🚀 Stack
 
-- Nuxt 4
-- Nuxt UI Pro
+- Nuxt 4 (verified on 4.3.0)
+- Nuxt UI
 - Nuxt Content (YAML/Markdown via `content/`)
 - nuxt-og-image (available for dynamic OG images if needed)
 - motion-v
