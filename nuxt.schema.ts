@@ -33,7 +33,7 @@ export default defineNuxtSchema({
           title: 'Email',
           description: 'Your email address.',
           icon: 'lucide:mail',
-          default: 'marcel@tuinstra.cc'
+          default: 'marcel@tuinstra.dev'
         }),
         picture: group({
           title: 'Picture',

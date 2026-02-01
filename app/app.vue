@@ -3,6 +3,33 @@ const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
+const { public: { siteUrl } } = useRuntimeConfig()
+const { seo, global } = useAppConfig()
+const ogImageUrl = computed(() => new URL('/images/og-light.png', siteUrl).toString())
+const jsonLd = computed(() => JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: seo?.siteName || 'Marcel Tuinstra',
+      url: siteUrl,
+      image: global?.picture?.light || undefined,
+      sameAs: [
+        'https://airporttoday.app',
+        'https://subtrack.nl',
+        'https://tuinstra.dev',
+        'https://github.com/marcel-tuinstra',
+        'https://www.linkedin.com/in/marcel-tuinstra-6a98895a'
+      ]
+    },
+    {
+      '@type': 'WebSite',
+      name: seo?.siteName || 'Marcel Tuinstra',
+      url: siteUrl
+    }
+  ]
+}))
+
 useHead({
   meta: [
     { charset: 'utf-8' },
@@ -10,7 +37,8 @@ useHead({
     { key: 'theme-color', name: 'theme-color', content: color }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+    { rel: 'manifest', href: '/site.webmanifest' }
   ],
   htmlAttrs: {
     lang: 'en'
@@ -19,9 +47,20 @@ useHead({
 
 useSeoMeta({
   titleTemplate: '%s',
-  ogImage: 'https://assets.hub.nuxt.com/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3BvcnRmb2xpby10ZW1wbGF0ZS5udXh0LmRldiIsImlhdCI6MTc0NTkzNDczMX0.XDWnQoyVy3XVtKQD6PLQ8RFUwr4yr1QnVwPxRrjCrro.jpg?theme=light',
-  twitterImage: 'https://assets.hub.nuxt.com/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3BvcnRmb2xpby10ZW1wbGF0ZS5udXh0LmRldiIsImlhdCI6MTc0NTkzNDczMX0.XDWnQoyVy3XVtKQD6PLQ8RFUwr4yr1QnVwPxRrjCrro.jpg?theme=light',
+  ogSiteName: seo?.siteName,
+  ogUrl: siteUrl,
+  ogImage: ogImageUrl,
+  twitterImage: ogImageUrl,
   twitterCard: 'summary_large_image'
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: jsonLd
+    }
+  ]
 })
 
 const [{ data: navigation }, { data: files }] = await Promise.all([

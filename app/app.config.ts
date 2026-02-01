@@ -7,8 +7,11 @@ export default defineAppConfig({
     },
     // meetingLink: 'https://cal.com/',
     phone: '+31630161893',
-    email: 'marcel@tuintra.cc',
+    email: 'marcel@tuinstra.dev',
     available: true
+  },
+  seo: {
+    siteName: 'Marcel Tuinstra'
   },
   ui: {
     colors: {
@@ -32,11 +35,13 @@ export default defineAppConfig({
       'icon': 'i-simple-icons-linkedin',
       'to': 'https://www.linkedin.com/in/marcel-tuinstra-6a98895a',
       'target': '_blank',
+      'rel': 'noopener',
       'aria-label': 'LinkedIn'
     }, {
       'icon': 'i-simple-icons-github',
       'to': 'https://github.com/marcel-tuinstra',
       'target': '_blank',
+      'rel': 'noopener',
       'aria-label': 'GitHub'
     }]
   }

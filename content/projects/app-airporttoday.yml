@@ -1,6 +1,6 @@
 title: AirportToday
 description: Live situational awareness for airports, centered on a real-time map canvas.
-image: /images/app-subtrack.png
+image: /images/app-airporttoday.png
 url: https://airporttoday.app
-tags: ["Nuxt 4", "Tailwind CSS", "Nuxt UI Pro", "Symfony", "Api Platform"]
+tags: ["Nuxt 4", "Tailwind CSS", "Nuxt UI", "Symfony", "Api Platform"]
 date: "2026"

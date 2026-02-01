@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const siteUrl = 'https://marcel.tuinstra.dev'
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -9,6 +11,13 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'motion-v/nuxt'
   ],
+
+  runtimeConfig: {
+    public: {
+      siteUrl
+    }
+  },
+
 
   devtools: {
     enabled: true

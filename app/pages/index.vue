@@ -10,11 +10,23 @@ if (!page.value) {
   })
 }
 
+const route = useRoute()
+const { public: { siteUrl } } = useRuntimeConfig()
+const canonicalUrl = computed(() => new URL(route.path, siteUrl).toString())
+
 useSeoMeta({
   title: page.value?.seo.title || page.value?.title,
   ogTitle: page.value?.seo.title || page.value?.title,
   description: page.value?.seo.description || page.value?.description,
-  ogDescription: page.value?.seo.description || page.value?.description
+  ogDescription: page.value?.seo.description || page.value?.description,
+  ogType: 'website',
+  ogUrl: canonicalUrl
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: canonicalUrl }
+  ]
 })
 </script>
 

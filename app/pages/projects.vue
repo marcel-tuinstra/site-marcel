@@ -15,12 +15,23 @@ const { data: projects } = await useAsyncData('projects', () => {
 })
 
 const { global } = useAppConfig()
+const route = useRoute()
+const { public: { siteUrl } } = useRuntimeConfig()
+const canonicalUrl = computed(() => new URL(route.path, siteUrl).toString())
 
 useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
   description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
+  ogDescription: page.value?.seo?.description || page.value?.description,
+  ogType: 'website',
+  ogUrl: canonicalUrl
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: canonicalUrl }
+  ]
 })
 </script>
 
@@ -70,6 +81,8 @@ useSeoMeta({
           :title="project.title"
           :description="project.description"
           :to="project.url"
+          target="_blank"
+          rel="noopener"
           orientation="horizontal"
           variant="naked"
           :reverse="index % 2 === 1"
@@ -86,6 +99,8 @@ useSeoMeta({
           <template #footer>
             <ULink
               :to="project.url"
+              target="_blank"
+              rel="noopener"
               class="text-sm text-primary flex items-center"
             >
               View Project

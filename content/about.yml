@@ -22,6 +22,14 @@ content: |
   My go-to stack today includes Nuxt 3, Vue, TypeScript, Tailwind CSS, and Symfony on the backend.
   These choices help me build with flexibility and maintainability in mind.
 
+  ### Projects in the Wild
+
+  You can follow some of my active projects here:
+  <a href="https://airporttoday.app" target="_blank" rel="noopener">AirportToday</a>,
+  <a href="https://subtrack.nl" target="_blank" rel="noopener">Subtrack</a>,
+  and <a href="https://tuinstra.dev" target="_blank" rel="noopener">tuinstra.dev</a>
+  <UBadge size="xs" variant="soft" class="align-middle">WIP</UBadge>.
+
   ### What Keeps Me Going
 
   I’m most excited by constant improvement: in my tools, in my code, and in myself.
@@ -32,7 +40,7 @@ content: |
 
   When I’m not at the keyboard, you’ll probably find me training for CrossFit or Hyrox, biking, running, or just enjoying a quiet day.
   I also enjoy mentoring junior developers, helping teammates grow, or catching up with people over a good conversation, inside or outside of work.
-  Feel free to check out my [projects](/projects) or [get in touch](https://www.linkedin.com/in/marcel-tuinstra-6a98895a) if you'd like to connect.
+  Feel free to check out my [projects](/projects) or <a href="https://www.linkedin.com/in/marcel-tuinstra-6a98895a" target="_blank" rel="noopener">get in touch</a> if you'd like to connect.
 
 images:
   - src: /images/me_biking.jpeg

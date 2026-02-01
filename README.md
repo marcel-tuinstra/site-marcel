@@ -1,35 +1,30 @@
 # 🌐 site-marcel
 
-> Personal portfolio site built with Nuxt 3 and Tailwind CSS.  
-> Deployed at: [https://marcel.tuinstra.dev](https://marcel.tuinstra.dev)
+Personal portfolio site for Marcel Tuinstra, built with Nuxt 4 and Nuxt UI Pro.
 
----
-
-## 🧠 Overview
-
-This site serves as my personal portfolio — showcasing who I am, what I build, and where I’m going. Built with performance, SEO, and visual clarity in mind.
-
----
+Deployed at: https://marcel.tuinstra.dev
 
 ## 🚀 Stack
 
-- [Nuxt 3](https://nuxt.com)
-- Tailwind CSS
+- Nuxt 4
+- Nuxt UI Pro
+- Nuxt Content (YAML/Markdown via `content/`)
+- nuxt-og-image (available for dynamic OG images if needed)
+- motion-v
 - VueUse
-- SSR (via Vercel or Netlify)
-- Markdown or Headless CMS (optional)
 
----
+## 📁 Content
 
-## 📁 Sections
+- `content/index.yml` – homepage content
+- `content/projects/*.yml` – project list entries
+- `content/about.yml` – about page content
+- `content/blog/*.md` – blog posts (if enabled)
 
-- Hero / Intro
-- About Me
-- Projects
-- Skills
-- Contact
+## 🔎 SEO
 
----
+- Canonical base URL: `runtimeConfig.public.siteUrl` in `nuxt.config.ts`
+- Global meta defaults: `app/app.vue`
+- Social preview image: `public/images/og-light.png` (replace with a fresh screenshot of the site)
 
 ## 📦 Setup
 
@@ -37,8 +32,6 @@ This site serves as my personal portfolio — showcasing who I am, what I build,
 npm install
 npm run dev
 ```
-
----
 
 ## 🔒 License
 

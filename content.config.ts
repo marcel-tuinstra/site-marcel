@@ -57,7 +57,7 @@ export default defineContentConfig({
             })
           }))
         }),
-        testimonials: z.array(createTestimonialSchema()),
+        testimonials: z.array(createTestimonialSchema()).optional(),
         faq: createBaseSchema().extend({
           categories: z.array(
             z.object({
@@ -69,7 +69,7 @@ export default defineContentConfig({
                 })
               )
             }))
-        })
+        }).optional()
       })
     }),
     projects: defineCollection({
