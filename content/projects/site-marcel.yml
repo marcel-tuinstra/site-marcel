@@ -1,6 +1,0 @@
-title: Personal Site
-description: Built my personal developer portfolio using Nuxt 3, Nuxt UI Pro, Nuxt Content and Nuxt Studio. Focused on clean architecture, SEO optimization, and maintainable Markdown-based content editing via Nuxt Studio.
-image: /images/site-marcel.png
-url: https://marcel.tuinstra.dev
-tags: ["Nuxt 3", "Tailwind CSS", "Nuxt Content", "Nuxt Studio", "Nuxt UI Pro"]
-date: "2025"

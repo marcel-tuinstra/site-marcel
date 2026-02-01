@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projecten",
+    "about": "Over mij"
+  },
+  "language": {
+    "switch_to": "Schakel naar {locale}",
+    "locale": {
+      "en": "Engels",
+      "nl": "Nederlands"
+    }
+  },
+  "error": {
+    "not_found": {
+      "title": "Pagina niet gevonden",
+      "description": "Sorry, deze pagina kon niet worden gevonden."
+    }
+  },
+  "projects": {
+    "view_project": "Bekijk project"
+  },
+  "person": {
+    "description": "Full-stack developer met focus op Vue/Nuxt en Symfony. Ik woon in Dronten, Nederland."
+  }
+}

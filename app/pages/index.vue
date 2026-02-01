@@ -1,6 +1,9 @@
 <script setup lang="ts">
+const { locale } = useI18n()
 const { data: page } = await useAsyncData('index', () => {
-  return queryCollection('index').first()
+  return queryCollection('index').where('locale', '=', locale.value).first()
+}, {
+  watch: [locale]
 })
 if (!page.value) {
   throw createError({
@@ -23,10 +26,8 @@ useSeoMeta({
   ogUrl: canonicalUrl
 })
 
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ]
+definePageMeta({
+  key: route => `index-${route.fullPath}`
 })
 </script>
 

@@ -1,0 +1,10 @@
+locale: nl
+title: Dingen die ik heb gebouwd
+seo:
+  title: Marcel Tuinstra — Full-Stack Developer | Projecten
+  description: Geselecteerde projecten die ik heb gebouwd met Vue/Nuxt en Symfony.
+description: Dit zijn side projects en persoonlijke builds waar ik buiten mijn dagelijkse werk aan heb gewerkt. Ik bouw met Vue/Nuxt en Symfony en focus op doordachte architectuur, schone code en usability.
+links:
+  - label: "Laten we praten"
+    color: "neutral"
+  - label: "Mail me"

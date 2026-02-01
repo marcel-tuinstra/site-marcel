@@ -1,0 +1,7 @@
+locale: nl
+title: Persoonlijke site
+description: Ik bouwde mijn persoonlijke developer-portfolio met Nuxt, Nuxt UI Pro, Nuxt Content en Nuxt Studio. De focus ligt op schone architectuur, SEO en onderhoudbare contentbewerking.
+image: /images/site-marcel.png
+url: https://marcel.tuinstra.dev
+tags: ["Nuxt 3", "Tailwind CSS", "Nuxt Content", "Nuxt Studio", "Nuxt UI Pro"]
+date: "2025"

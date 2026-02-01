@@ -1,5 +1,6 @@
+locale: nl
 title: AirportToday
-description: Live situational awareness for airports, centered on a real-time map canvas.
+description: Ik bouwde AirportToday om live situational awareness voor luchthavens te bieden, met een realtime kaart als kern.
 image: /images/app-airporttoday.png
 url: https://airporttoday.app
 tags: ["Nuxt 4", "Tailwind CSS", "Nuxt UI", "Symfony", "Api Platform"]

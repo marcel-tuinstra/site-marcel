@@ -1,0 +1,53 @@
+locale: nl
+title: Over mij
+seo:
+  title: Marcel Tuinstra — Full-Stack Developer | Over mij
+  description: Lees meer over Marcel Tuinstra, een full-stack developer met focus op Vue/Nuxt en Symfony. Ik woon in Dronten, Nederland.
+description: Lees meer over mij, een full-stack developer met een passie voor digitale producten die schone code combineren met usability en performance.
+links:
+  - label: "Laten we praten"
+    color: "neutral"
+  - label: "Mail me"
+content: |
+  Hoi, ik ben **Marcel Tuinstra**, een full-stack developer uit Dronten.
+  Ik bouw moderne webapps met frameworks zoals Vue, Nuxt, Symfony en Tailwind CSS.
+  Met een IT-achtergrond en een sterke focus op kwaliteit vind ik het belangrijk hoe dingen werken en hoe ze aanvoelen.
+  In de loop der jaren ben ik doorgegroeid naar full-stack rollen waar backendlogica en front-end design samenkomen.
+  Ik geniet van het maken van intuïtieve UIs en het koppelen daarvan aan een schone, onderhoudbare architectuur.
+  Of ik nu aan een eigen project werk of in een team, ik wil doordachte en robuuste software opleveren.
+
+  ### Mijn ontwikkelfilosofie
+
+  Ik geloof dat geweldige software begint met het begrijpen van het *waarom*.
+  Voor wie bouw ik dit? Wat vinden zij echt belangrijk? Van daaruit houd ik het graag simpel, efficient en elegant, zowel in code als in UI.
+  Ik hecht net zoveel waarde aan details en developer experience als aan performance en UX.
+
+  Ik werk graag across the stack, maar ik heb een zwak voor frontend-architectuur, design systems en soepele tooling.
+  Mijn huidige stack bestaat uit Nuxt 3, Vue, TypeScript, Tailwind CSS en Symfony op de backend.
+  Daarmee kan ik flexibel bouwen en toch onderhoudbaar blijven.
+
+  ### Projecten in het wild
+
+  Een paar van mijn actieve projecten:
+  <a href="https://airporttoday.app" target="_blank" rel="noopener">AirportToday</a>,
+  <a href="https://subtrack.nl" target="_blank" rel="noopener">Subtrack</a>,
+  en <a href="https://tuinstra.dev" target="_blank" rel="noopener">tuinstra.dev</a>
+  <UBadge size="xs" variant="soft" class="align-middle">WIP</UBadge>.
+
+  ### Wat mij energie geeft
+
+  Ik word het meest enthousiast van constante verbetering: in mijn tools, in mijn code en in mezelf.
+  Ik hou van de flow die ontstaat bij het oplossen van een lastige UI-uitdaging, het testen met gebruikers of het omzetten van een vaag idee naar iets interactiefs.
+  Er is altijd iets om te verfijnen, te herdenken of te leren.
+
+  ### Buiten tech
+
+  Als ik niet achter mijn toetsenbord zit, vind je me waarschijnlijk in de CrossFit-box of bij Hyrox, op de fiets, hardlopend of gewoon genietend van een rustige dag.
+  Ik vind het ook leuk om junior developers te coachen, teamgenoten verder te helpen of bij te praten met mensen binnen en buiten het werk.
+  Bekijk gerust mijn [projecten](/projects) of <a href="https://www.linkedin.com/in/marcel-tuinstra-6a98895a" target="_blank" rel="noopener">neem contact op</a> als je wilt connecten.
+
+images:
+  - src: /images/me_biking.jpeg
+    alt: Fietsen in het vlakke Flevoland
+  - src: /images/me_captain.jpeg
+    alt: Varen op de Friese meren

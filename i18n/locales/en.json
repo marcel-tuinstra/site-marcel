@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About"
+  },
+  "language": {
+    "switch_to": "Switch to {locale}",
+    "locale": {
+      "en": "English",
+      "nl": "Dutch"
+    }
+  },
+  "error": {
+    "not_found": {
+      "title": "Page not found",
+      "description": "Sorry, this page could not be found."
+    }
+  },
+  "projects": {
+    "view_project": "View Project"
+  },
+  "person": {
+    "description": "Full-stack developer focused on Vue/Nuxt and Symfony. Based in Dronten, Netherlands."
+  }
+}

@@ -1,0 +1,7 @@
+locale: en
+title: Subtrack
+description: I built Subtrack, a SaaS platform for managing WBSO innovation projects. It gives companies and consultants clear insight into progress, time logging, and validations through a modern, intuitive interface.
+image: /images/app-subtrack.png
+url: https://subtrack.nl
+tags: ["Nuxt 4", "Tailwind CSS", "Nuxt UI", "Symfony", "Api Platform"]
+date: "2025"
