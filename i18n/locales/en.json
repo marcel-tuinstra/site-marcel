@@ -5,6 +5,7 @@
     "about": "About"
   },
   "language": {
+    "menu": "Switch language",
     "switch_to": "Switch to {locale}",
     "locale": {
       "en": "English",
