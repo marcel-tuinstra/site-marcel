@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
-const { t } = useI18n()
-const localeHead = useLocaleHead({ seo: true })
+const { t, locale, locales } = useI18n()
+const localeHead = useLocaleHead({ dir: true, lang: true, seo: true })
 const navLinks = useNavLinks()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
@@ -11,6 +11,25 @@ const { seo, global } = useAppConfig()
 const ogImageUrl = computed(() => new URL('/images/og-light.png', siteUrl).toString())
 const siteName = seo?.siteName || 'Marcel Tuinstra'
 const personDescription = computed(() => t('person.description'))
+const getLocaleLanguage = (value: unknown) => {
+  if (typeof value === 'string') {
+    return value
+  }
+  if (value && typeof value === 'object') {
+    const localeValue = value as { language?: string, iso?: string, code?: string }
+    return localeValue.language || localeValue.iso || localeValue.code || null
+  }
+  return null
+}
+const currentLanguage = computed<string>(() => {
+  const current = locales.value.find(value => typeof value === 'object' && value.code === locale.value)
+  return getLocaleLanguage(current) || locale.value
+})
+const ogLocale = computed(() => currentLanguage.value.replace('-', '_'))
+const ogLocaleAlternate = computed(() => locales.value
+  .map(value => getLocaleLanguage(value))
+  .filter((value): value is string => Boolean(value) && value !== currentLanguage.value)
+  .map(value => value.replace('-', '_')))
 const jsonLd = computed(() => JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -81,6 +100,8 @@ useSeoMeta({
   titleTemplate: '%s',
   ogSiteName: seo?.siteName,
   ogUrl: siteUrl,
+  ogLocale: ogLocale,
+  ogLocaleAlternate: ogLocaleAlternate,
   ogImage: ogImageUrl,
   twitterImage: ogImageUrl,
   twitterCard: 'summary_large_image'

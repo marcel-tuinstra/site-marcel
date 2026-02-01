@@ -1,9 +1,9 @@
 locale: nl
 seo:
   title: "Marcel Tuinstra — Full-Stack Developer"
-  description: "Ik ben Marcel Tuinstra, een full-stack developer met focus op Vue/Nuxt en Symfony. Ik woon in Dronten, Nederland. Bekijk mijn projecten, achtergrond en werk."
-title: "Hoi, ik ben Marcel Tuinstra"
-description: "Ik ben een full-stack developer die schone, onderhoudbare apps bouwt met Vue/Nuxt op de frontend en Symfony op de backend. Ik woon in Dronten en werk graag remote."
+  description: "Marcel Tuinstra is een full-stack developer met focus op Vue/Nuxt en Symfony, gevestigd in Dronten, Nederland. Bekijk projecten, achtergrond en werk."
+title: "Marcel Tuinstra"
+description: "Full-stack developer die schone, onderhoudbare apps bouwt met Vue/Nuxt op de frontend en Symfony op de backend. Gevestigd in Dronten en graag remote."
 hero:
   links: []
   images:
@@ -22,11 +22,11 @@ hero:
 about:
   title: "Over mij"
   description: |
-    Ik ben Marcel Tuinstra, een full-stack developer met een IT-achtergrond en een sterke passie voor robuuste applicaties met een schone architectuur en gepolijste UI.
+    Marcel Tuinstra hier, een full-stack developer met een IT-achtergrond en een sterke passie voor robuuste applicaties met een schone architectuur en gepolijste UI.
     In de loop der jaren ben ik doorgegroeid naar full-stack rollen waarin backendlogica en intuïtieve frontends samenkomen.
     Ik bouw met Vue/Nuxt op de frontend en Symfony op de backend.
     Buiten het werk vind je me in de CrossFit-box, bij Hyrox, hardlopend of op de fiets.
-    Ik ben altijd iets aan het bouwen, of het nu software is of persoonlijke uitdagingen.
+    Altijd iets aan het bouwen, of het nu software is of persoonlijke uitdagingen.
 experience:
   title: Werkervaring
   items:

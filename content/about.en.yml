@@ -9,12 +9,12 @@ links:
     color: "neutral"
   - label: "Email me"
 content: |
-  Hi, I'm **Marcel Tuinstra**, a full-stack developer based in Dronten, Netherlands.
+  Hi, **Marcel Tuinstra** — a full-stack developer based in Dronten, Netherlands.
   I specialize in building modern web applications using frameworks like Vue, Nuxt, Symfony, and Tailwind CSS.
   With a background in IT and a strong focus on quality, I care deeply about how things work and how they feel to use.
   Over the years, I've naturally evolved into full-stack roles where backend logic meets frontend design.
   I enjoy crafting intuitive UIs and pairing them with clean, maintainable architecture.
-  Whether I'm working on a personal project or collaborating with a team, I aim to ship thoughtful, resilient software.
+  Whether working on a personal project or collaborating with a team, the goal stays the same: ship thoughtful, resilient software.
 
   ### My Development Philosophy
 
@@ -36,13 +36,13 @@ content: |
 
   ### What Keeps Me Going
 
-  I'm most excited by constant improvement: in my tools, in my code, and in myself.
+  What excites me most is constant improvement: in my tools, in my code, and in myself.
   I love the flow that comes with solving a tough UI challenge, testing UI with the public, or turning a vague idea into something real and interactive.
   There's always something to refine, rethink, or learn.
 
   ### Outside of Tech
 
-  When I'm not at the keyboard, you'll probably find me training for CrossFit or Hyrox, biking, running, or just enjoying a quiet day.
+  Away from the keyboard, you'll probably find me training for CrossFit or Hyrox, biking, running, or just enjoying a quiet day.
   I also enjoy mentoring junior developers, helping teammates grow, or catching up with people over a good conversation, inside or outside of work.
   Feel free to check out my [projects](/projects) or <a href="https://www.linkedin.com/in/marcel-tuinstra-6a98895a" target="_blank" rel="noopener">get in touch</a> if you'd like to connect.
 
