@@ -61,6 +61,6 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json', iso: 'en-US', language: 'en-US' },
       { code: 'nl', name: 'Nederlands', file: 'nl.json', iso: 'nl-NL', language: 'nl-NL' }
     ],
-    vueI18n: './i18n.config.ts'
+    vueI18n: 'i18n.config.ts'
   }
 })

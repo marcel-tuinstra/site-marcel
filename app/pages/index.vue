@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { locale } = useI18n()
-const { data: page } = await useAsyncData('index', () => {
+const { data: page } = await useAsyncData(`index-${locale.value}`, () => {
   return queryCollection('index').where('locale', '=', locale.value).first()
 }, {
   watch: [locale]

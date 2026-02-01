@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
-const { data: page } = await useAsyncData('projects-page', () => {
+const { data: page } = await useAsyncData(`projects-page-${locale.value}`, () => {
   return queryCollection('pages').where('locale', '=', locale.value).first()
 }, {
   watch: [locale]
@@ -13,7 +13,7 @@ if (!page.value) {
   })
 }
 
-const { data: projects } = await useAsyncData('projects', () => {
+const { data: projects } = await useAsyncData(`projects-${locale.value}`, () => {
   return queryCollection('projects').where('locale', '=', locale.value).all()
 }, {
   watch: [locale]
