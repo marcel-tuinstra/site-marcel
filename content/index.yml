@@ -1,8 +1,8 @@
 seo:
-  title: "Marcel Tuinstra - Fullstack Developer"
-  description: "Hi, I'm Marcel Tuinstra — a fullstack software engineer with experience in Nuxt, Vue, Symfony, and Tailwind. Explore my projects, background, and work in crafting clean, maintainable web applications."
-title: "Hi, I'm Marcel Tuinstra"
-description: "A fullstack developer focused on building clean, maintainable apps with modern frameworks like Nuxt, Vue, Symfony, and Tailwind. I enjoy crafting user-friendly interfaces backed by solid architecture."
+  title: "Marcel Tuinstra — Full-Stack Developer"
+  description: "Marcel Tuinstra is a full-stack developer specializing in Vue/Nuxt and Symfony. Based in Dronten, Netherlands. Explore projects, background, and work."
+title: "Marcel Tuinstra, Full-Stack Developer"
+description: "Marcel Tuinstra is a full-stack developer building clean, maintainable apps with Vue/Nuxt on the frontend and Symfony on the backend. Based in Dronten, Netherlands and available for remote-friendly work."
 hero:
 #  links:
 #    - label: "Use this template"
@@ -24,8 +24,9 @@ hero:
 about:
   title: "About Me"
   description: |
-    I’m a developer with a background in IT and a strong passion for building robust fullstack applications with clean architecture and polished UI.
-    Over time, I’ve naturally grown into fullstack roles, combining backend logic with intuitive frontends.
+    I'm Marcel Tuinstra, a full-stack developer with a background in IT and a strong passion for building robust applications with clean architecture and polished UI.
+    Over time, I've grown into full-stack roles, combining backend logic with intuitive frontends.
+    I build with Vue/Nuxt on the frontend and Symfony on the backend.
     Outside of code, you’ll find me doing CrossFit, Hyrox, running or biking.
     I’m always creating, whether it’s software or personal challenges.
 experience:
