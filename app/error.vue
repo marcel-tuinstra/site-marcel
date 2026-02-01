@@ -8,15 +8,24 @@ defineProps({
   }
 })
 
-useHead({
+const { t } = useI18n()
+const localeHead = useLocaleHead({ seo: true })
+const navLinks = useNavLinks()
+const errorTitle = computed(() => t('error.not_found.title'))
+const errorDescription = computed(() => t('error.not_found.description'))
+
+useHead(() => ({
   htmlAttrs: {
-    lang: 'en'
-  }
-})
+    ...localeHead.value.htmlAttrs
+  },
+  link: [
+    ...(localeHead.value.link || [])
+  ]
+}))
 
 useSeoMeta({
-  title: 'Page not found',
-  description: 'We are sorry but this page could not be found.'
+  title: errorTitle,
+  description: errorDescription
 })
 
 const [{ data: navigation }, { data: files }] = await Promise.all([

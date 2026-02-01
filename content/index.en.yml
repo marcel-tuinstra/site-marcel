@@ -1,34 +1,32 @@
+locale: en
 seo:
   title: "Marcel Tuinstra — Full-Stack Developer"
-  description: "Marcel Tuinstra is a full-stack developer specializing in Vue/Nuxt and Symfony. Based in Dronten, Netherlands. Explore projects, background, and work."
-title: "Marcel Tuinstra, Full-Stack Developer"
-description: "Marcel Tuinstra is a full-stack developer building clean, maintainable apps with Vue/Nuxt on the frontend and Symfony on the backend. Based in Dronten, Netherlands and available for remote-friendly work."
+  description: "Marcel Tuinstra is a full-stack developer specializing in Vue/Nuxt and Symfony, based in Dronten, Netherlands. Explore projects, background, and work."
+title: "Marcel Tuinstra"
+description: "Full-stack developer building clean, maintainable apps with Vue/Nuxt on the frontend and Symfony on the backend. Based in Dronten, Netherlands and open to remote-friendly work."
 hero:
-#  links:
-#    - label: "Use this template"
-#      to: https://github.com/nuxt-ui-pro/portfolio
-#      color: "neutral"
+  links: []
   images:
     - src: /images/me_biking.jpeg
-      alt: Myself while biking
+      alt: Me biking
     - src: /images/me_captain.jpeg
-      alt: Myself while boating
+      alt: Me boating
     - src: /images/me_running.jpeg
-      alt: Myself while running
+      alt: Me running
     - src: /images/me_standing.jpeg
-      alt: Myself while standing
+      alt: Me standing
     - src: /images/me_thumbs_up.jpeg
-      alt: Myself while being OK
+      alt: Me giving a thumbs-up
     - src: /images/me_triathlon.jpeg
-      alt: Myself while triathlon
+      alt: Me at a triathlon
 about:
   title: "About Me"
   description: |
-    I'm Marcel Tuinstra, a full-stack developer with a background in IT and a strong passion for building robust applications with clean architecture and polished UI.
+    Marcel Tuinstra here, a full-stack developer with a background in IT and a strong passion for building robust applications with clean architecture and polished UI.
     Over time, I've grown into full-stack roles, combining backend logic with intuitive frontends.
     I build with Vue/Nuxt on the frontend and Symfony on the backend.
-    Outside of code, you’ll find me doing CrossFit, Hyrox, running or biking.
-    I’m always creating, whether it’s software or personal challenges.
+    Outside of code, you'll find me doing CrossFit, Hyrox, running, or biking.
+    Always creating, whether it's software or personal challenges.
 experience:
   title: Work Experience
   items:

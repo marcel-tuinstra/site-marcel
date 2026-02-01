@@ -1,0 +1,60 @@
+locale: nl
+seo:
+  title: "Marcel Tuinstra — Full-Stack Developer"
+  description: "Marcel Tuinstra is een full-stack developer met focus op Vue/Nuxt en Symfony, gevestigd in Dronten, Nederland. Bekijk projecten, achtergrond en werk."
+title: "Marcel Tuinstra"
+description: "Full-stack developer die schone, onderhoudbare apps bouwt met Vue/Nuxt op de frontend en Symfony op de backend. Gevestigd in Dronten en graag remote."
+hero:
+  links: []
+  images:
+    - src: /images/me_biking.jpeg
+      alt: Ik op de fiets
+    - src: /images/me_captain.jpeg
+      alt: Ik aan het varen
+    - src: /images/me_running.jpeg
+      alt: Ik aan het hardlopen
+    - src: /images/me_standing.jpeg
+      alt: Ik sta rechtop
+    - src: /images/me_thumbs_up.jpeg
+      alt: Ik geef een duim omhoog
+    - src: /images/me_triathlon.jpeg
+      alt: Ik bij een triathlon
+about:
+  title: "Over mij"
+  description: |
+    Marcel Tuinstra hier, een full-stack developer met een IT-achtergrond en een sterke passie voor robuuste applicaties met een schone architectuur en gepolijste UI.
+    In de loop der jaren ben ik doorgegroeid naar full-stack rollen waarin backendlogica en intuïtieve frontends samenkomen.
+    Ik bouw met Vue/Nuxt op de frontend en Symfony op de backend.
+    Buiten het werk vind je me in de CrossFit-box, bij Hyrox, hardlopend of op de fiets.
+    Altijd iets aan het bouwen, of het nu software is of persoonlijke uitdagingen.
+experience:
+  title: Werkervaring
+  items:
+    - position: "Sr. Software Engineer bij"
+      date: "2025 - NU()"
+      company:
+        name: Skrepr
+        logo: ""
+        url: "https://skrepr.com"
+        color: "#ffa524"
+    - position: "Sr. Software Engineer bij"
+      date: "2016 - 2025"
+      company:
+        name: Validaide
+        logo: ""
+        url: "https://validaide.com"
+        color: "#00a79d"
+    - position: "Fullstack Developer bij"
+      date: "2016 - 2016"
+      company:
+        name: Experius
+        logo: ""
+        url: "https://experius.nl"
+        color: "#0a6aff"
+    - position: "Software Engineer bij"
+      date: "2014 - 2016"
+      company:
+        name: Berlinger
+        logo: ""
+        url: "https://www.berlinger.com/cold-chain-monitoring-solutions"
+        color: "#C70068"

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
+    '@nuxtjs/i18n',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt'
@@ -48,5 +49,18 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio'
     }
+  },
+
+  i18n: {
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    baseUrl: siteUrl,
+    lazy: true,
+    langDir: 'locales',
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json', iso: 'en-US', language: 'en-US' },
+      { code: 'nl', name: 'Nederlands', file: 'nl.json', iso: 'nl-NL', language: 'nl-NL' }
+    ],
+    vueI18n: './i18n.config.ts'
   }
 })

@@ -1,6 +1,9 @@
 <script setup lang="ts">
+const { t, locale } = useI18n()
 const { data: page } = await useAsyncData('projects-page', () => {
-  return queryCollection('pages').path('/projects').first()
+  return queryCollection('pages').where('locale', '=', locale.value).first()
+}, {
+  watch: [locale]
 })
 if (!page.value) {
   throw createError({
@@ -11,7 +14,9 @@ if (!page.value) {
 }
 
 const { data: projects } = await useAsyncData('projects', () => {
-  return queryCollection('projects').all()
+  return queryCollection('projects').where('locale', '=', locale.value).all()
+}, {
+  watch: [locale]
 })
 
 const { global } = useAppConfig()
@@ -28,10 +33,8 @@ useSeoMeta({
   ogUrl: canonicalUrl
 })
 
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ]
+definePageMeta({
+  key: route => `projects-${route.fullPath}`
 })
 </script>
 
@@ -103,7 +106,7 @@ useHead({
               rel="noopener"
               class="text-sm text-primary flex items-center"
             >
-              View Project
+              {{ t('projects.view_project') }}
               <UIcon
                 name="i-lucide-arrow-right"
                 class="size-4 text-primary transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100"

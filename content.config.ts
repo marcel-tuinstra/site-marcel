@@ -34,12 +34,18 @@ const createTestimonialSchema = () => z.object({
   author: createAuthorSchema()
 })
 
+const createLocaleSchema = () => z.enum(['en', 'nl'])
+
 export default defineContentConfig({
   collections: {
     index: defineCollection({
       type: 'page',
-      source: 'index.yml',
+      source: [
+        { include: 'index.en.yml' },
+        { include: 'index.nl.yml' }
+      ],
       schema: z.object({
+        locale: createLocaleSchema(),
         hero: z.object({
           links: z.array(createButtonSchema()),
           images: z.array(createImageSchema())
@@ -76,6 +82,7 @@ export default defineContentConfig({
       type: 'data',
       source: 'projects/*.yml',
       schema: z.object({
+        locale: createLocaleSchema(),
         title: z.string().nonempty(),
         description: z.string().nonempty(),
         image: z.string().nonempty().editor({ input: 'media' }),
@@ -97,16 +104,22 @@ export default defineContentConfig({
     pages: defineCollection({
       type: 'page',
       source: [
-        { include: 'projects.yml' }
+        { include: 'projects.en.yml' },
+        { include: 'projects.nl.yml' }
       ],
       schema: z.object({
+        locale: createLocaleSchema(),
         links: z.array(createButtonSchema())
       })
     }),
     about: defineCollection({
       type: 'page',
-      source: 'about.yml',
+      source: [
+        { include: 'about.en.yml' },
+        { include: 'about.nl.yml' }
+      ],
       schema: z.object({
+        locale: createLocaleSchema(),
         content: z.object({}),
         images: z.array(createImageSchema())
       })
