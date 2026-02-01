@@ -1,39 +1,35 @@
-name: Deploy to Server
+name: Deploy Production
 
 on:
-    workflow_run:
-        workflows: ["CI"]
-        types:
-            - completed
+  push:
+    branches: [main]
 
 jobs:
-    deploy:
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-            - name: Deploy over SSH
-              uses: appleboy/ssh-action@v1.0.0
-              with:
-                  host: ${{ secrets.SERVER_IP }}
-                  username: mtuinstra
-                  key: ${{ secrets.SSH_PRIVATE_KEY }}
-                  script: |
-                      # Setup SSH access for Git
-                      mkdir -p ~/.ssh
-                      echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-                      chmod 600 ~/.ssh/id_rsa
-                      ssh-keyscan github.com >> ~/.ssh/known_hosts
-                      
-                      # Pull latest changes
-                      cd /mnt/ssd1000-01/projects/site-marcel
-                      git pull https://github.com/marcel-tuinstra/site-marcel.git main
-                      
-                      # Rebuild and restart container
-                      cd /mnt/nvme/docker-compose/site-marcel
-                      docker compose down
-                      docker compose build --no-cache
-                      docker compose up -d
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: mtuinstra
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Setup SSH access for Git
+            mkdir -p ~/.ssh
+            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+            # Pull latest changes
+            cd /mnt/ssd1000-01/projects/site-marcel
+            git pull https://github.com/marcel-tuinstra/site-marcel.git main
+
+            # Rebuild and restart container
+            cd /mnt/nvme/docker-compose/site-marcel
+            export COMPOSE_PROJECT_NAME=site-marcel
+            docker compose up -d --build --force-recreate --remove-orphans
