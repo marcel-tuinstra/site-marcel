@@ -8,6 +8,7 @@ const { seo, global } = useAppConfig()
 const route = useRoute()
 const ogImageUrl = computed(() => new URL('/images/og-light.png', siteUrl).toString())
 const siteName = seo?.siteName || 'Marcel Tuinstra'
+const personDescription = 'Full-stack developer focused on Vue/Nuxt and Symfony. Based in Dronten, Netherlands.'
 const canonicalUrl = computed(() => new URL(route.path, siteUrl).toString())
 const jsonLd = computed(() => JSON.stringify({
   '@context': 'https://schema.org',
@@ -17,6 +18,22 @@ const jsonLd = computed(() => JSON.stringify({
       'name': seo?.siteName || 'Marcel Tuinstra',
       'url': siteUrl,
       'image': global?.picture?.light || undefined,
+      'jobTitle': 'Full-Stack Developer',
+      'description': personDescription,
+      'homeLocation': {
+        '@type': 'Place',
+        'name': 'Dronten, Netherlands'
+      },
+      'knowsAbout': [
+        'Full-stack development',
+        'Frontend development',
+        'Backend development',
+        'Vue.js',
+        'Nuxt',
+        'Symfony',
+        'TypeScript',
+        'PHP'
+      ],
       'sameAs': [
         'https://airporttoday.app',
         'https://subtrack.nl',
