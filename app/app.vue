@@ -5,8 +5,10 @@ const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
 const { public: { siteUrl } } = useRuntimeConfig()
 const { seo, global } = useAppConfig()
+const route = useRoute()
 const ogImageUrl = computed(() => new URL('/images/og-light.png', siteUrl).toString())
 const siteName = seo?.siteName || 'Marcel Tuinstra'
+const canonicalUrl = computed(() => new URL(route.path, siteUrl).toString())
 const jsonLd = computed(() => JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -39,13 +41,16 @@ useHead({
     { name: 'apple-mobile-web-app-capable', content: 'yes' },
     { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
     { name: 'apple-mobile-web-app-title', content: siteName },
-    { name: 'mobile-web-app-capable', content: 'yes' }
+    { name: 'mobile-web-app-capable', content: 'yes' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'googlebot', content: 'index, follow' }
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' },
     { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
     { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+    { rel: 'canonical', href: canonicalUrl },
     { rel: 'manifest', href: '/site.webmanifest' }
   ],
   htmlAttrs: {
