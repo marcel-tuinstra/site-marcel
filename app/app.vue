@@ -11,10 +11,10 @@ const jsonLd = computed(() => JSON.stringify({
   '@graph': [
     {
       '@type': 'Person',
-      name: seo?.siteName || 'Marcel Tuinstra',
-      url: siteUrl,
-      image: global?.picture?.light || undefined,
-      sameAs: [
+      'name': seo?.siteName || 'Marcel Tuinstra',
+      'url': siteUrl,
+      'image': global?.picture?.light || undefined,
+      'sameAs': [
         'https://airporttoday.app',
         'https://subtrack.nl',
         'https://tuinstra.dev',
@@ -24,8 +24,8 @@ const jsonLd = computed(() => JSON.stringify({
     },
     {
       '@type': 'WebSite',
-      name: seo?.siteName || 'Marcel Tuinstra',
-      url: siteUrl
+      'name': seo?.siteName || 'Marcel Tuinstra',
+      'url': siteUrl
     }
   ]
 }))
