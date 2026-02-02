@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/i18n',
+    'nuxt-studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt'
@@ -45,9 +46,12 @@ export default defineNuxtConfig({
     }
   },
 
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'marcel-tuinstra',
+      repo: 'site-marcel',
+      branch: 'main'
     }
   },
 

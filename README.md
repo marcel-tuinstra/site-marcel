@@ -33,6 +33,10 @@ npm install
 npm run dev
 ```
 
+## ✍️ Nuxt Studio
+
+Self-hosted setup notes live in `docs/nuxt-studio.md`.
+
 ## 🔒 License
 
 This project is not licensed for reuse.
