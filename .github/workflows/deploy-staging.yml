@@ -2,7 +2,7 @@ name: Deploy Staging
 
 on:
   push:
-    branches: [main]
+    branches: [develop]
 
 permissions:
   contents: read
@@ -15,8 +15,9 @@ jobs:
     with:
       service-name: site-marcel
       image-name: ghcr.io/marcel-tuinstra/site-marcel
-      health-url: https://marcel.tuinstra.dev/health
+      health-url: https://staging.marcel.tuinstra.dev/health
       environment: staging
-      remote-path: /mnt/ssd1000-01/projects/site-marcel
+      remote-path: /mnt/ssd1000-01/projects/site-marcel/staging
       ssh-user: mtuinstra
       dockerfile: Dockerfile
+      compose-file: docker-compose.staging.yml
