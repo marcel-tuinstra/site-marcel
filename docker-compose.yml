@@ -1,0 +1,6 @@
+services:
+  site-marcel:
+    image: ghcr.io/marcel-tuinstra/site-marcel:latest
+    ports:
+      - "3000:80"
+    restart: unless-stopped
