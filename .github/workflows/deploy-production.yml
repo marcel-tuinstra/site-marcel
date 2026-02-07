@@ -10,6 +10,7 @@ permissions:
 jobs:
   deploy:
     uses: marcel-tuinstra/devops/.github/workflows/reusable-cd-nuxt-ssg.yml@v1
+    secrets: inherit
     with:
       service-name: site-marcel
       image-name: ghcr.io/marcel-tuinstra/site-marcel
