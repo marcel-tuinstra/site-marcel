@@ -16,6 +16,6 @@ jobs:
       image-name: ghcr.io/marcel-tuinstra/site-marcel
       health-url: https://marcel.tuinstra.dev/health
       environment: production
-      remote-path: /mnt/nvme/docker-compose/site-marcel
+      remote-path: /mnt/ssd1000-01/projects/site-marcel
       ssh-user: mtuinstra
       dockerfile: Dockerfile
