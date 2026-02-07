@@ -18,7 +18,4 @@ jobs:
       environment: staging
       remote-path: /mnt/nvme/docker-compose/site-marcel
       ssh-user: mtuinstra
-      ssh-host: ${{ vars.SSH_STAGING_HOST }}
       dockerfile: Dockerfile
-    secrets:
-      ssh-private-key: ${{ secrets.SSH_STAGING_PRIVATE_KEY }}
