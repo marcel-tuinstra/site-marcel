@@ -48,7 +48,7 @@ docker compose -f docker-compose.yml -f .deploy-override.yml pull site-marcel
 docker compose -f docker-compose.yml -f .deploy-override.yml up -d --no-deps site-marcel
 
 # Verify health
-curl -fsS https://marcel.tuinstra.dev/
+curl -fsS https://marcel.tuinstra.dev/health
 
 # Clean up override
 rm -f .deploy-override.yml
