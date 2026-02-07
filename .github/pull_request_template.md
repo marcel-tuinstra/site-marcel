@@ -1,7 +1,6 @@
 ## Status
 
-[![Lint](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/lint.yml/badge.svg?label=lint)](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/lint.yml)
-[![Tests](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/tests.yml/badge.svg?label=tests)](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/tests.yml)
+[![CI](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/ci.yml/badge.svg)](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/ci.yml)
 
 ## Summary
 
