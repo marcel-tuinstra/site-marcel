@@ -1,5 +1,7 @@
-# .dockerignore
 node_modules
 .nuxt
 .output
 dist
+.git
+.github
+docs

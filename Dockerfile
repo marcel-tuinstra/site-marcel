@@ -1,26 +1,14 @@
-# Base Nuxt image
-FROM node:22-alpine
-
-# Install system dependencies
-RUN apk add --no-cache git
-
-# Set working directory
+FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Copy package files first for better caching
 COPY package*.json ./
+RUN npm ci
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the code
 COPY . .
+RUN npm run generate
 
-# Build the Nuxt app
-RUN npm run build
+FROM nginx:1.27-alpine
+COPY --from=builder /app/.output/public /usr/share/nginx/html
+EXPOSE 80
 
-# Expose the port
-EXPOSE 3000
-
-# Run the app in production
-CMD ["node", ".output/server/index.mjs"]
+CMD ["nginx", "-g", "daemon off;"]

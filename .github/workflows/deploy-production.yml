@@ -1,0 +1,19 @@
+name: Deploy Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: marcel-tuinstra/devops/.github/workflows/reusable-cd-nuxt-ssg.yml@v1
+    with:
+      service-name: site-marcel
+      image-name: ghcr.io/marcel-tuinstra/site-marcel
+      health-url: https://marcel.tuinstra.dev/
+      environment: production
+      remote-path: /mnt/nvme/docker-compose/site-marcel
+      ssh-user: mtuinstra
+      ssh-host: ${{ vars.SSH_PRODUCTION_HOST }}
+      dockerfile: Dockerfile
+    secrets:
+      ssh-private-key: ${{ secrets.SSH_PRODUCTION_PRIVATE_KEY }}
