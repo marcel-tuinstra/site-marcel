@@ -17,7 +17,6 @@ export default defineNuxtConfig({
   ],
 
   gtag: {
-    id: process.env.NUXT_PUBLIC_GTAG_ID,
     initCommands: [
       ['consent', 'default', {
         ad_storage: 'denied',
