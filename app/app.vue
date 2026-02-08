@@ -4,7 +4,7 @@ const { t, locale, locales } = useI18n()
 const localeHead = useLocaleHead({ dir: true, lang: true, seo: true })
 const navLinks = useNavLinks()
 
-const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
+const color = computed(() => colorMode.value === 'dark' ? '#171717' : '#ffffff')
 
 const { public: { siteUrl } } = useRuntimeConfig()
 const { seo, global } = useAppConfig()
@@ -76,7 +76,7 @@ useHead(() => ({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { key: 'theme-color', name: 'theme-color', content: color },
     { name: 'apple-mobile-web-app-capable', content: 'yes' },
-    { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
     { name: 'apple-mobile-web-app-title', content: siteName },
     { name: 'mobile-web-app-capable', content: 'yes' },
     { name: 'robots', content: 'index, follow' },
