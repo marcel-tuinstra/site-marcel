@@ -21,6 +21,10 @@
   "projects": {
     "view_project": "Bekijk project"
   },
+  "hero": {
+    "available": "Beschikbaar voor nieuwe projecten",
+    "not_available": "Momenteel niet beschikbaar"
+  },
   "person": {
     "description": "Full-stack developer met focus op Vue/Nuxt en Symfony. Ik woon in Dronten, Nederland."
   },

@@ -21,6 +21,10 @@
   "projects": {
     "view_project": "View Project"
   },
+  "hero": {
+    "available": "Available for new projects",
+    "not_available": "Not available at the moment"
+  },
   "person": {
     "description": "Full-stack developer focused on Vue/Nuxt and Symfony. Based in Dronten, Netherlands."
   },

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { IndexCollectionItem } from '@nuxt/content'
 
+const { t } = useI18n()
 const { footer, global } = useAppConfig()
 
 defineProps<{
@@ -110,8 +111,8 @@ defineProps<{
             :color="global.available ? 'success' : 'error'"
             variant="ghost"
             class="gap-2"
-            :to="global.available ? global.meetingLink : ''"
-            :label="global.available ? 'Available for new projects' : 'Not available at the moment'"
+            :to="global.available && global.meetingLink ? global.meetingLink : undefined"
+            :label="global.available ? t('hero.available') : t('hero.not_available')"
           >
             <template #leading>
               <span class="relative flex size-2">
@@ -156,7 +157,7 @@ defineProps<{
       </div>
     </template>
 
-    <UPageMarquee
+    <UMarquee
       pause-on-hover
       class="py-2 -mx-4 sm:-mx-6 lg:-mx-8 [--duration:40s]"
     >
@@ -186,6 +187,6 @@ defineProps<{
           v-bind="img"
         >
       </Motion>
-    </UPageMarquee>
+    </UMarquee>
   </UPageHero>
 </template>
