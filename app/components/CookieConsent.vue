@@ -41,10 +41,10 @@ function handleRejectAll() {
     >
       <div
         v-if="showBanner"
-        class="fixed inset-x-0 bottom-0 z-50 p-4"
+        class="fixed right-0 bottom-0 z-50 p-4"
       >
         <UCard
-          class="mx-auto max-w-lg"
+          class="max-w-lg"
           :ui="{ root: 'shadow-lg ring-1 ring-default' }"
         >
           <div class="space-y-4">
