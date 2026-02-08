@@ -15,7 +15,6 @@ jobs:
     with:
       service-name: site-marcel
       image-name: ghcr.io/marcel-tuinstra/site-marcel
-      health-url: https://staging.marcel.tuinstra.dev/health
       environment: staging
       remote-path: /mnt/ssd1000-01/projects/site-marcel/staging
       ssh-user: mtuinstra
