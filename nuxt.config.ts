@@ -12,8 +12,22 @@ export default defineNuxtConfig({
     'nuxt-studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    'motion-v/nuxt'
+    'motion-v/nuxt',
+    'nuxt-gtag'
   ],
+
+  gtag: {
+    id: process.env.NUXT_PUBLIC_GTAG_ID,
+    initCommands: [
+      ['consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      }]
+    ]
+  },
 
   site: {
     url: siteUrl
