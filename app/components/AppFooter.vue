@@ -1,5 +1,7 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const { footer } = useAppConfig()
+const { resetConsent } = useCookieConsent()
 </script>
 
 <template>
@@ -8,7 +10,17 @@ const { footer } = useAppConfig()
     :ui="{ left: 'text-xs' }"
   >
     <template #left>
-      {{ footer.credits }}
+      <span>{{ footer.credits }}</span>
+      <ClientOnly>
+        <UButton
+          size="xs"
+          variant="link"
+          color="neutral"
+          class="text-xs"
+          :label="t('cookie.manage')"
+          @click="resetConsent"
+        />
+      </ClientOnly>
     </template>
 
     <template #right>

@@ -23,5 +23,24 @@
   },
   "person": {
     "description": "Full-stack developer met focus op Vue/Nuxt en Symfony. Ik woon in Dronten, Nederland."
+  },
+  "cookie": {
+    "banner": {
+      "title": "Cookievoorkeuren",
+      "description": "Wij gebruiken cookies om je ervaring te verbeteren. Je kunt hieronder je voorkeuren aanpassen.",
+      "accept_all": "Alles accepteren",
+      "reject_all": "Alles weigeren",
+      "customize": "Aanpassen",
+      "save": "Voorkeuren opslaan"
+    },
+    "categories": {
+      "necessary": "Noodzakelijk",
+      "necessary_description": "Vereist voor het goed functioneren van de website.",
+      "analytics": "Analytisch",
+      "analytics_description": "Helpen ons te begrijpen hoe bezoekers de website gebruiken.",
+      "marketing": "Marketing",
+      "marketing_description": "Gebruikt voor het tonen van gepersonaliseerde advertenties."
+    },
+    "manage": "Cookievoorkeuren"
   }
 }
