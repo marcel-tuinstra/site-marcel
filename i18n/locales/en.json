@@ -23,5 +23,24 @@
   },
   "person": {
     "description": "Full-stack developer focused on Vue/Nuxt and Symfony. Based in Dronten, Netherlands."
+  },
+  "cookie": {
+    "banner": {
+      "title": "Cookie preferences",
+      "description": "We use cookies to improve your experience. You can customize your preferences below.",
+      "accept_all": "Accept all",
+      "reject_all": "Reject all",
+      "customize": "Customize",
+      "save": "Save preferences"
+    },
+    "categories": {
+      "necessary": "Necessary",
+      "necessary_description": "Required for the website to function properly.",
+      "analytics": "Analytics",
+      "analytics_description": "Help us understand how visitors interact with the website.",
+      "marketing": "Marketing",
+      "marketing_description": "Used to deliver personalized advertisements."
+    },
+    "manage": "Cookie preferences"
   }
 }

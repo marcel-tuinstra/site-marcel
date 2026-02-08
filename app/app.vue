@@ -144,6 +144,8 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
       </UMain>
     </NuxtLayout>
 
+    <CookieConsent />
+
     <ClientOnly>
       <LazyUContentSearch
         :files="files"
