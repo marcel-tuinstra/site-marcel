@@ -20,3 +20,5 @@ jobs:
       ssh-user: mtuinstra
       dockerfile: Dockerfile
       compose-file: docker-compose.production.yml
+      build-args: |
+        NUXT_PUBLIC_GTAG_ID=${{ vars.NUXT_PUBLIC_GTAG_ID }}
