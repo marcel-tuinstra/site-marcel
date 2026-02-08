@@ -103,15 +103,19 @@ defineProps<{
         }"
       >
         <div
-          v-if="page.hero.links"
+          v-if="page.hero.links?.length"
           class="flex items-center gap-2"
         >
-          <UButton v-bind="page.hero.links[0]" />
+          <UButton
+            v-for="(link, idx) in page.hero.links"
+            :key="idx"
+            v-bind="link"
+          />
           <UButton
             :color="global.available ? 'success' : 'error'"
             variant="ghost"
             class="gap-2"
-            :to="global.available && global.meetingLink ? global.meetingLink : undefined"
+            :to="global.available ? `mailto:${global.email}` : undefined"
             :label="global.available ? t('hero.available') : t('hero.not_available')"
           >
             <template #leading>
