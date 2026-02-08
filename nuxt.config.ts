@@ -8,11 +8,16 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
     'nuxt-studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt'
   ],
+
+  site: {
+    url: siteUrl
+  },
 
   runtimeConfig: {
     public: {
