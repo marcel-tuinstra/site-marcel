@@ -5,7 +5,16 @@ seo:
 title: "Marcel Tuinstra"
 description: "Full-stack developer die schone, onderhoudbare apps bouwt met Vue/Nuxt op de frontend en Symfony op de backend. Gevestigd in Dronten en graag remote."
 hero:
-  links: []
+  links:
+    - label: Bekijk Projecten
+      to: /projects
+      icon: i-lucide-folder-open
+      color: primary
+    - label: Neem Contact Op
+      to: mailto:marcel@tuinstra.dev
+      icon: i-lucide-mail
+      color: neutral
+      variant: outline
   images:
     - src: /images/me_biking.jpeg
       alt: Ik op de fiets
