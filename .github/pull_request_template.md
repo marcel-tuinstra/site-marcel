@@ -1,12 +1,17 @@
 ## Status
 
-[![CI](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/ci.yml/badge.svg)](https://github.com/marcel-tuinstra/site-marcel/actions/workflows/ci.yml)
+[![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
 ## Summary
 
-What does this change?
+<!-- Describe what this PR changes and why -->
 
 ## Checklist
 
-- [ ] Docs updated (README / docs/)
-- [ ] Linked issues / context noted
+- [ ] Tests pass locally
+- [ ] Documentation updated (if applicable)
+- [ ] Linked to Shortcut story
+
+## Shortcut
+
+<!-- Link to Shortcut story: https://app.shortcut.com/tuinstradev/story/XXX -->

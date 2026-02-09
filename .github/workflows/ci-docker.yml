@@ -1,0 +1,10 @@
+name: CI Docker
+
+on:
+  pull_request:
+
+jobs:
+  docker-scan:
+    uses: marcel-tuinstra/devops/.github/workflows/reusable-ci-docker.yml@v1
+    with:
+      dockerfile: Dockerfile
