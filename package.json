@@ -25,8 +25,7 @@
     "motion-v": "^1.10.2",
     "nuxt": "^4.3.0",
     "nuxt-gtag": "^4.1.0",
-    "nuxt-og-image": "^5.1.13",
-    "nuxt-studio": "^1.2.0"
+    "nuxt-og-image": "^5.1.13"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.13.0",
