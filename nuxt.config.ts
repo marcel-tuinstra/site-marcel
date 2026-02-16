@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
-    'nuxt-studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt',
@@ -61,15 +60,6 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
-    }
-  },
-
-  studio: {
-    repository: {
-      provider: 'github',
-      owner: 'marcel-tuinstra',
-      repo: 'site-marcel',
-      branch: 'main'
     }
   },
 
