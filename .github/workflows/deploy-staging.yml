@@ -1,8 +1,9 @@
 name: Deploy Staging
 
 on:
-  push:
-    branches: [develop]
+  workflow_dispatch: # Manual trigger only - staging disabled
+  # push:
+  #   branches: [develop]
 
 permissions:
   contents: read
