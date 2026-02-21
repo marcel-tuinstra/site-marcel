@@ -74,7 +74,6 @@ export default defineNuxtConfig({
       fallbackLocale: 'en'
     },
     baseUrl: siteUrl,
-    lazy: true,
     langDir: 'locales',
     locales: [
       { code: 'en', name: 'English', file: 'en.json', iso: 'en-US', language: 'en-US' },
