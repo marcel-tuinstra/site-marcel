@@ -13,24 +13,37 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.87",
-    "@iconify-json/simple-icons": "^1.2.69",
-    "@nuxt/content": "^3.11.0",
+    "@iconify-json/lucide": "^1.2.92",
+    "@iconify-json/simple-icons": "^1.2.71",
+    "@nuxt/content": "^3.11.2",
     "@nuxt/image": "^2.0.0",
     "@nuxt/ui": "^4.4.0",
-    "@nuxtjs/i18n": "^9.5.6",
+    "@nuxtjs/i18n": "^10.2.3",
     "@nuxtjs/sitemap": "^7.6.0",
-    "@vueuse/nuxt": "^14.2.0",
+    "@vueuse/nuxt": "^14.2.1",
     "better-sqlite3": "^12.6.2",
-    "motion-v": "^1.10.2",
-    "nuxt": "^4.3.0",
+    "motion-v": "2.0.0-beta.4",
+    "nuxt": "^4.3.1",
     "nuxt-gtag": "^4.1.0",
     "nuxt-og-image": "^5.1.13"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.13.0",
-    "eslint": "^9.25.1",
-    "typescript": "^5.8.3",
+    "@nuxt/eslint": "^1.15.1",
+    "eslint": "^10.0.1",
+    "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch": ">=10.2.1"
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild",
+      "sharp",
+      "unrs-resolver",
+      "vue-demi"
+    ]
   }
 }
