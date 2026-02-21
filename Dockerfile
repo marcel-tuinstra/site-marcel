@@ -4,17 +4,14 @@ WORKDIR /app
 # Update base image packages for security patches
 RUN apk upgrade --no-cache
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
 ARG NUXT_PUBLIC_GTAG_ID
 ENV NUXT_PUBLIC_GTAG_ID=${NUXT_PUBLIC_GTAG_ID}
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package*.json ./
+RUN npm ci
 
 COPY . .
-RUN pnpm run generate
+RUN npm run generate
 
 FROM nginx:1.27-alpine
 
