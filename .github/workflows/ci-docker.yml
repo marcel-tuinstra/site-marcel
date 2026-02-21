@@ -1,4 +1,4 @@
-name: CI Docker
+name: site-marcel-ci-docker
 
 on:
   pull_request:

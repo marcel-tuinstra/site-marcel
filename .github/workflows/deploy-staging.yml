@@ -1,4 +1,4 @@
-name: Deploy Staging
+name: site-marcel-deploy-staging
 
 on:
   workflow_dispatch: # Manual trigger only - staging disabled
