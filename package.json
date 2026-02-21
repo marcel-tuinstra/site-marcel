@@ -33,6 +33,9 @@
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
   },
+  "overrides": {
+    "minimatch": ">=10.2.1"
+  },
   "pnpm": {
     "overrides": {
       "minimatch": ">=10.2.1"
