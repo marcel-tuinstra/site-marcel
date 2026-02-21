@@ -1,4 +1,4 @@
-name: Deploy Production
+name: site-marcel-deploy-production
 
 on:
   push:

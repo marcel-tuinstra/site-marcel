@@ -1,4 +1,4 @@
-name: Create Release PR
+name: site-marcel-release-pr
 
 on:
   workflow_dispatch:
