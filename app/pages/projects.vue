@@ -1,26 +1,32 @@
 <script setup lang="ts">
-const { t, locale } = useI18n()
-const { data: page } = await useAsyncData(`projects-page-${locale.value}`, () => {
-  return queryCollection('pages').where('locale', '=', locale.value).first()
+const route = useRoute()
+const { t, locale, setLocale } = useI18n()
+const resolvedLocale = route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en'
+
+if (locale.value !== resolvedLocale) {
+  await setLocale(resolvedLocale)
+}
+
+const { data: page } = await useAsyncData(`projects-page-${resolvedLocale}`, () => {
+  return queryCollection('pages').where('locale', '=', resolvedLocale).first()
 }, {
   watch: [locale]
 })
+
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page not found',
-    fatal: true
+    statusMessage: 'Page not found'
   })
 }
 
-const { data: projects } = await useAsyncData(`projects-${locale.value}`, () => {
-  return queryCollection('projects').where('locale', '=', locale.value).all()
+const { data: projects } = await useAsyncData(`projects-${resolvedLocale}`, () => {
+  return queryCollection('projects').where('locale', '=', resolvedLocale).all()
 }, {
   watch: [locale]
 })
 
 const { global } = useAppConfig()
-const route = useRoute()
 const { public: { siteUrl } } = useRuntimeConfig()
 const canonicalUrl = computed(() => new URL(route.path, siteUrl).toString())
 
