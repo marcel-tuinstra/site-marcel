@@ -8,7 +8,7 @@ ARG NUXT_PUBLIC_GTAG_ID
 ENV NUXT_PUBLIC_GTAG_ID=${NUXT_PUBLIC_GTAG_ID}
 
 COPY package*.json ./
-RUN npm ci
+RUN npm ci || npm install
 
 COPY . .
 RUN npm run generate
