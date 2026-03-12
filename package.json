@@ -40,21 +40,5 @@
     "minimatch": "10.2.4",
     "rollup": "4.59.0",
     "serialize-javascript": "7.0.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "fast-xml-parser": "5.4.2",
-      "minimatch": "10.2.4",
-      "rollup": "4.59.0",
-      "serialize-javascript": "7.0.3"
-    },
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "better-sqlite3",
-      "esbuild",
-      "sharp",
-      "unrs-resolver",
-      "vue-demi"
-    ]
   }
 }
