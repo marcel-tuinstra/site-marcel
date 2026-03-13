@@ -104,13 +104,8 @@ defineProps<{
       >
         <div
           v-if="page.hero.links?.length"
-          class="flex items-center gap-2"
+          class="flex flex-col items-center gap-3"
         >
-          <UButton
-            v-for="(link, idx) in page.hero.links"
-            :key="idx"
-            v-bind="link"
-          />
           <UButton
             :color="global.available ? 'success' : 'error'"
             variant="ghost"
@@ -131,6 +126,14 @@ defineProps<{
               </span>
             </template>
           </UButton>
+
+          <div class="flex items-center gap-2">
+            <UButton
+              v-for="(link, idx) in page.hero.links"
+              :key="idx"
+              v-bind="link"
+            />
+          </div>
         </div>
       </Motion>
 
