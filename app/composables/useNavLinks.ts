@@ -1,4 +1,5 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { normalizeLocalePath } from '../utils/normalizeLocalePath'
 
 export const useNavLinks = () => {
   const { t } = useI18n()
@@ -7,7 +8,7 @@ export const useNavLinks = () => {
   return computed<NavigationMenuItem[]>(() => [{
     label: t('nav.home'),
     icon: 'i-lucide-home',
-    to: localePath('/')
+    to: normalizeLocalePath(localePath('/'))
   }, {
     label: t('nav.projects'),
     icon: 'i-lucide-folder',

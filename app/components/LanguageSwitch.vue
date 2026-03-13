@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { normalizeLocalePath } from '../utils/normalizeLocalePath'
+
 const { t, locale } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
@@ -6,12 +8,12 @@ const localeOptions = computed(() => ([
   {
     code: 'en',
     label: t('language.locale.en'),
-    to: switchLocalePath('en')
+    to: normalizeLocalePath(switchLocalePath('en'))
   },
   {
     code: 'nl',
     label: t('language.locale.nl'),
-    to: switchLocalePath('nl')
+    to: normalizeLocalePath(switchLocalePath('nl'))
   }
 ]))
 const menuItems = computed(() => [localeOptions.value])
