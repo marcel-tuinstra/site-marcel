@@ -1,24 +1,12 @@
 <script setup lang="ts">
 const route = useRoute()
-const { locale, setLocale } = useI18n()
-const resolvedLocale = route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en'
+const resolvedLocale = computed<'en' | 'nl'>(() => route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en')
 
-if (locale.value !== resolvedLocale) {
-  await setLocale(resolvedLocale)
-}
-
-const { data: page } = await useAsyncData(`about-${resolvedLocale}`, () => {
-  return queryCollection('about').where('locale', '=', resolvedLocale).first()
+const { data: page } = await useAsyncData('about-page', () => {
+  return queryCollection('about').where('locale', '=', resolvedLocale.value).first()
 }, {
-  watch: [locale]
+  watch: [resolvedLocale]
 })
-
-if (!page.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page not found'
-  })
-}
 
 const { global } = useAppConfig()
 const { public: { siteUrl } } = useRuntimeConfig()

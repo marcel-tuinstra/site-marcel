@@ -1,4 +1,4 @@
-export default defineNuxtRouteMiddleware(async () => {
+export default defineNuxtRouteMiddleware(async (to) => {
   const nuxtApp = useNuxtApp()
   const i18n = nuxtApp.$i18n as {
     locale: { value: string }
@@ -39,6 +39,16 @@ export default defineNuxtRouteMiddleware(async () => {
 
   const normalizedCurrentLocale = normalizeLocale(i18n.locale.value)
   const fallbackLocale: 'en' | 'nl' = 'en'
+  const routeLocale = normalizeLocale(to.path === '/nl' || to.path.startsWith('/nl/') ? 'nl' : 'en') || fallbackLocale
+
+  if (localeCookie.value !== routeLocale) {
+    localeCookie.value = routeLocale
+  }
+
+  if (normalizedCurrentLocale !== routeLocale) {
+    await i18n.setLocale(routeLocale)
+    return
+  }
 
   if (!normalizedCurrentLocale) {
     await i18n.setLocale(fallbackLocale)

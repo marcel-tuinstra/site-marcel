@@ -1,29 +1,18 @@
 <script setup lang="ts">
 const route = useRoute()
-const { t, locale, setLocale } = useI18n()
-const resolvedLocale = route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en'
+const { t } = useI18n()
+const resolvedLocale = computed<'en' | 'nl'>(() => route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en')
 
-if (locale.value !== resolvedLocale) {
-  await setLocale(resolvedLocale)
-}
-
-const { data: page } = await useAsyncData(`projects-page-${resolvedLocale}`, () => {
-  return queryCollection('pages').where('locale', '=', resolvedLocale).first()
+const { data: page } = await useAsyncData('projects-page', () => {
+  return queryCollection('pages').where('locale', '=', resolvedLocale.value).first()
 }, {
-  watch: [locale]
+  watch: [resolvedLocale]
 })
 
-if (!page.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page not found'
-  })
-}
-
-const { data: projects } = await useAsyncData(`projects-${resolvedLocale}`, () => {
-  return queryCollection('projects').where('locale', '=', resolvedLocale).all()
+const { data: projects } = await useAsyncData('projects-list', () => {
+  return queryCollection('projects').where('locale', '=', resolvedLocale.value).all()
 }, {
-  watch: [locale]
+  watch: [resolvedLocale]
 })
 
 const { global } = useAppConfig()
