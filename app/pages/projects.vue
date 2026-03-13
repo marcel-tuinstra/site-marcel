@@ -2,14 +2,16 @@
 const route = useRoute()
 const { t } = useI18n()
 const resolvedLocale = computed<'en' | 'nl'>(() => route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en')
+const pageKey = computed(() => `projects-page-${resolvedLocale.value}`)
+const projectsKey = computed(() => `projects-list-${resolvedLocale.value}`)
 
-const { data: page } = await useAsyncData('projects-page', () => {
+const { data: page } = await useAsyncData(pageKey, () => {
   return queryCollection('pages').where('locale', '=', resolvedLocale.value).first()
 }, {
   watch: [resolvedLocale]
 })
 
-const { data: projects } = await useAsyncData('projects-list', () => {
+const { data: projects } = await useAsyncData(projectsKey, () => {
   return queryCollection('projects').where('locale', '=', resolvedLocale.value).all()
 }, {
   watch: [resolvedLocale]

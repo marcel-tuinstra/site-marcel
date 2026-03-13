@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const route = useRoute()
 const resolvedLocale = computed<'en' | 'nl'>(() => route.path === '/nl' || route.path.startsWith('/nl/') ? 'nl' : 'en')
+const pageKey = computed(() => `about-page-${resolvedLocale.value}`)
 
-const { data: page } = await useAsyncData('about-page', () => {
+const { data: page } = await useAsyncData(pageKey, () => {
   return queryCollection('about').where('locale', '=', resolvedLocale.value).first()
 }, {
   watch: [resolvedLocale]
