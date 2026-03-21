@@ -13,33 +13,36 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.97",
-    "@iconify-json/simple-icons": "^1.2.73",
+    "@iconify-json/lucide": "^1.2.98",
+    "@iconify-json/simple-icons": "^1.2.74",
     "@nuxt/content": "^3.12.0",
     "@nuxt/image": "^2.0.0",
     "@nuxt/ui": "^4.5.1",
     "@nuxtjs/i18n": "^10.2.3",
     "@nuxtjs/sitemap": "^7.6.0",
-    "@takumi-rs/core": "^0.70.4",
+    "@takumi-rs/core": "^1.0.0-beta.3",
     "@vueuse/nuxt": "^14.2.1",
-    "better-sqlite3": "^12.6.2",
-    "motion-v": "2.0.0",
+    "better-sqlite3": "^12.8.0",
+    "motion-v": "2.0.1",
     "nuxt": "^4.4.2",
     "nuxt-gtag": "^4.1.0",
-    "nuxt-og-image": "^6.0.0"
+    "nuxt-og-image": "^6.1.0"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
-    "commander": "^13.1.0",
-    "eslint": "^10.0.3",
-    "tailwindcss": "^4.2.0",
+    "commander": "^14.0.3",
+    "eslint": "^10.1.0",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.5"
+    "vue-tsc": "^3.2.6"
   },
   "overrides": {
-    "fast-xml-parser": "5.4.2",
+    "fast-xml-parser": "5.5.8",
+    "flatted": "3.4.2",
+    "h3": "1.15.9",
     "minimatch": "10.2.4",
-    "rollup": "4.59.0",
-    "serialize-javascript": "7.0.3"
+    "rollup": "4.59.1",
+    "serialize-javascript": "7.0.4",
+    "socket.io-parser": "4.2.6"
   }
 }
